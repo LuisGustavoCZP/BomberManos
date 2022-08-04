@@ -25,10 +25,14 @@ tasks:
     openMode: tab-after
   - name: Start Postgres Stack
     init: |
-     docker-compose pull
-    command: |
-     alias redis-cli="docker exec -it redis-stack redis-cli" 
-     echo "Use redis-cli to interact with Redis here."
-     docker-compose up -d
-     gp sync-done finished
+     psql -h localhost -U gitpod -f server/sql/start.sql
     openMode: tab-after
+    env:
+      PORT: 8000
+      POSTGRES_CONNECTION_STRING: postgres://gitpod@localhost/express-typescript
+    
+github: 
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true

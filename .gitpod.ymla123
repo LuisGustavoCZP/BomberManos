@@ -9,7 +9,10 @@ tasks:
     env:
       PORT: 8000
       POSTGRES_CONNECTION_STRING: postgres://gitpod@localhost/express-typescript
-      
+  - name: Build Client Stack
+    init: npm run install:all 
+    command: 
+      npm run build:client
 ports: 
   - port: 8000
     visibility: public
