@@ -10,7 +10,3 @@ CREATE TABLE public.users (
 ) WITH (
   OIDS=FALSE
 );
-
-
-
-
