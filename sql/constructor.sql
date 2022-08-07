@@ -1,6 +1,6 @@
 CREATE TABLE public.users (
 	"id" serial NOT NULL,
-	"fistname" varchar(255) NOT NULL,
+	"firstname" varchar(255) NOT NULL,
 	"lastname" varchar(255) NOT NULL,
 	"email" varchar(255) NOT NULL,
 	"birthday" varchar(10) NOT NULL,

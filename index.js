@@ -12,7 +12,7 @@ function insertQuery (user)
     if(!user.firstname) return;
     return `
     <p>
-        INSERT INTO users(firstname, lastname, email, phone, birthday, gender) VALUES("${user.firstname}", "${user.lastname}", "${user.email}", "${user.phone}", "${user.birthday}", "${user.gender}");
+        INSERT INTO users("firstname", "lastname", "email", "phone", "birthday", "gender") VALUES("${user.firstname}", "${user.lastname}", "${user.email}", "${user.phone}", "${user.birthday}", "${user.gender}");
     </p>
     `;
 }
