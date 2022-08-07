@@ -23,6 +23,7 @@ tasks:
      docker-compose up -d
      gp sync-done finished
     openMode: tab-after
+    
   - name: Start Postgres Stack
     init: |
      psql -h localhost -U gitpod -f sql/start.sql
