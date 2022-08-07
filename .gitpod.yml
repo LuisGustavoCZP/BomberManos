@@ -27,10 +27,15 @@ tasks:
     init: |
      psql -h localhost -U gitpod -f sql/start.sql
     openMode: tab-after
+    
+  - name: Start Node Stack
+    init: | 
+     npm i
+    command: npm run start
+    openMode: tab-after
     env:
       PORT: 8000
       POSTGRES_CONNECTION_STRING: postgres://gitpod@localhost/express-typescript
-    
 github: 
   prebuilds:
     master: true
