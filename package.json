@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/LuisGustavoCZP/BomberManos#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "ioredis": "^5.2.2",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "uuid": "^8.3.2"
   }
 }
