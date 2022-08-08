@@ -42,7 +42,7 @@ function testeFinish ()
 function testeComputing ()
 {
     count++;
-    if(count == total)testeFinish ();
+    if(count == total) testeFinish ();
 }
 
 app.get ("/postgres", (req, res) =>
