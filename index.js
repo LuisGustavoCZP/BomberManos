@@ -26,20 +26,23 @@ let mode = "";
 let initTime = 0;
 let total = 0;
 let count = 0;
-function TesteComputing()
+
+function testeFinish ()
+{
+    const f = performance.now() - initTime;
+    const s = `Performance of ${mode}(${total/1000}K) = ${f}ms`;
+    mode = '';
+    total = 0;
+    count = 0;
+    initTime = 0;
+    //console.log(s);
+    resReq.send(s);
+}
+
+function testeComputing ()
 {
     count++;
-    if(count == total)
-    {
-        const f = performance.now() - initTime;
-        const s = `Performance of ${mode}(${total/1000}K) = ${f}ms`;
-        mode = '';
-        total = 0;
-        count = 0;
-        initTime = 0;
-        //console.log(s);
-        resReq.send(s);
-    }
+    if(count == total) testeFinish ();
 }
 
 app.get ("/postgres", (req, res) =>
@@ -47,11 +50,11 @@ app.get ("/postgres", (req, res) =>
     resReq = res;
     mode = "Postgres";
     total = Number(req.query.tests);
-    initTime = performance.now();
     for(let i = 0; i < total; i++)
     {
-        db.query('SELECT * FROM users').then(TesteComputing);
+        db.query('SELECT * FROM users').then(testeComputing);
     }
+    initTime = performance.now();
 });
 
 app.get ("/redis", (req, res) =>
@@ -59,11 +62,11 @@ app.get ("/redis", (req, res) =>
     resReq = res;
     mode = "Redis";
     total = Number(req.query.tests);
-    initTime = performance.now();
     for(let i = 0; i < total; i++)
     {
-        redis.lrange("users", 0, -1).then(TesteComputing);
+        redis.lrange("users", 0, -1).then(testeComputing);
     }
+    initTime = performance.now();
 });
 
 app.get ("/", async (req, res) =>
