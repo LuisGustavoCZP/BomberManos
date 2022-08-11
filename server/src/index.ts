@@ -1,11 +1,21 @@
 import express from 'express';
-import * as dotenv from 'dotenv';
-dotenv.config();
+import cookieParser from 'cookie-parser';
+
+import Routes from "./router";
+import Server from "./server";
+import Connections from "./connection";
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use(cookieParser());
+app.use(express.json())
+app.use(express.urlencoded({ extended: true}))
 
-app.listen(process.env.PORT, () =>{console.log('listening on port '+process.env.PORT);});
+app.use(express.static('../client/build'));
+
+app.use(Routes);
+
+const server = new Server(app);
+const connections = new Connections(server);
+
+server.listen();
