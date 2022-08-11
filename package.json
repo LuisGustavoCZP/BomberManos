@@ -4,7 +4,7 @@
   "description": "Game utilizando react, tailwind, typescript, redis e postgres",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": ""
   },
   "repository": {
     "type": "git",
@@ -17,12 +17,6 @@
   },
   "homepage": "https://github.com/LuisGustavoCZP/BomberManos#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "express-session": "^1.17.3",
-    "ioredis": "^5.2.2",
-    "pg": "^8.7.3",
-    "uuid": "^8.3.2"
+    
   }
 }

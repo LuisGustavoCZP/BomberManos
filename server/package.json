@@ -1,0 +1,19 @@
+{
+  "name": "bombermanos-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Gustavo CZP",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "ioredis": "^5.2.2",
+    "pg": "^8.7.3",
+    "uuid": "^8.3.2"
+  }
+}
