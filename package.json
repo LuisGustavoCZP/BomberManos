@@ -7,15 +7,15 @@
     "install:server": "cd server && npm i",
     "install:client": "cd client && npm i",
     "install": "npm run install:server && npm run install:client",
-    "dev:server": "cd client && npm run dev",
-    "dev:client": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
     "dev": "start \"Server\" npm run dev:server && start \"Client\" npm run dev:client",
-    "build:server": "cd client && npm run build",
-    "build:client": "cd server && npm run build",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
     "build": "npm run build:server && npm run build:client",
-    "start:server": "cd client && npm run start",
-    "start:client": "cd server && npm run start",
-    "start": "npm run build:client && npm run start:server"
+    "start:server": "cd server && npm run start",
+    "start:client": "cd client && npm run start",
+    "start": "npm run build:client && npm run build:server && npm run start:server"
   },
   "repository": {
     "type": "git",

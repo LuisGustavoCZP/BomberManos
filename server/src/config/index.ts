@@ -1,9 +1,13 @@
 import certs from "./certs";
 import matchConfig from "./match";
+import * as dotenv from "dotenv";
+
+dotenv.config();
+const initialPort = parseInt(process.env.PORT || "3000");
 
 const ports = {
-    http:8000,
-    https:8001
+    http:initialPort,
+    https:initialPort+1
 };
 
 const security = {
