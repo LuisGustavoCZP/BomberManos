@@ -7,7 +7,7 @@ ports:
   - port: 6379
     onOpen: ignore
     visibility: private
-  - port: 8000
+  - port: 3000
     visibility: public
     onOpen: open-browser
   - port: 5432
