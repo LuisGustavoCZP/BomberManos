@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Room } from './User';
 import { Request } from '../services';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import { GameHome } from './Game';
 
 let user : any;

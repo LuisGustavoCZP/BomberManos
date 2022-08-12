@@ -7,7 +7,8 @@ import IMatchType from './match-type';
 import IMatchUser from './match-user';
 import IGameSetup from './game-setup';
 import IGameMode from './game-mode';
+import { IGameProps } from './game-props';
 
 export type { ServerToClientEvents, ClientToServerEvents } from './socket';
 
-export type { APIResponse, IUser, GameRoomProps, IMatchSetup, IMatchPlayer, IMatchType, IMatchUser, IGameSetup, IGameMode };
+export type { APIResponse, IUser, GameRoomProps, IMatchSetup, IMatchPlayer, IMatchType, IMatchUser, IGameSetup, IGameMode, IGameProps };

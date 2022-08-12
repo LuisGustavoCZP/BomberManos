@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useEffect, useState } from 'react';
 import { GameRoomProps, IMatchSetup, ServerToClientEvents, ClientToServerEvents } from '../../models';
-import Searching from '../Searching';
+import Searching from '../../components/Searching';
 import * as SocketIO from 'socket.io-client';
 import MatchRoom from './MatchRoom';
 import GameScreen from './GameScreen';
@@ -52,7 +52,7 @@ function GameRoom (props: GameRoomProps)
 	}, []);
 	
 	if(!getMatchSetup) return (<Searching />);
-	if(getMatchStarted) return (<GameScreen user={props.user} socket={socket} gameData={getMatchStarted}/>);
+	if(getMatchStarted) return (<GameScreen user={props.user} socket={socket} data={getMatchStarted}/>);
 	else return (<MatchRoom matchSetup={getMatchSetup} user={props.user} socket={socket}/>);
 }
 

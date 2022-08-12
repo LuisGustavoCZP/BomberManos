@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from 'react';
-import { Login } from './';
-import { Register } from './';
+import { Login } from '.';
+import { Register } from '.';
 
 function UserRoom ()
 {

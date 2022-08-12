@@ -10,6 +10,8 @@ const ports = {
     https:initialPort+1
 };
 
+const postgres = process.env.POSTGRES;
+
 const security = {
     saltRounds:10,
     secret:"jacareperneta"
@@ -28,4 +30,4 @@ const validatorConfig = {
 
 
 
-export { certs, ports, security, sessionConfig, validatorConfig, matchConfig };
+export { certs, ports, security, sessionConfig, validatorConfig, postgres, matchConfig };

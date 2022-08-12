@@ -2,7 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useEffect, useState } from 'react';
 import { Request } from '../../services';
-import Loading from '../Loading';
+import Loading from '../../components/Loading';
 import GameRoom from './GameRoom';
 import { GameRoomProps, IGameMode } from '../../models';
 
@@ -12,16 +12,7 @@ function GameHome (props: GameRoomProps): JSX.Element
 	const [getMode, setMode] = useState(0);
 
 	async function getModes () 
-	{
-		/* const responseMatch = await Request.get('/match/search');
-		const m = responseMatch.data;
-		if(m)
-		{
-			console.log(m);
-			setMode(3);
-			return;
-		} */
-		
+	{		
 		const responseModes = await Request.get('/match/modes');
 		const p = responseModes.data;
 		setGameModes(p);
@@ -32,9 +23,6 @@ function GameHome (props: GameRoomProps): JSX.Element
 	{
 		const modeObj = getGameModes[getMode-1];
 		props.mode = `${modeObj.name}-${modeObj.types[type]}`;
-		/* const responseMatch = await Request.post('/match/insert', {type:`${modeObj.name}-${modeObj.types[type]}`}); */
-		//window.location.reload();
-		//console.log(props.mode);
 		setMode(3);
 	}
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/global.css';
 //import logo from './logo.svg';
 import './App.css';
-import { Main } from './components/Main';
+import { Main } from './pages/Main';
 //document.cookie
 
 function App() 
