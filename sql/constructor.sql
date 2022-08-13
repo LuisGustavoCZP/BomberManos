@@ -11,6 +11,7 @@ CREATE TABLE public.users (
 );
 
 
+
 CREATE TABLE public.users_info (
 	"user_id" integer NOT NULL UNIQUE,
 	"nickname" varchar(255) NOT NULL,
@@ -22,6 +23,7 @@ CREATE TABLE public.users_info (
 );
 
 
+
 CREATE TABLE public.characters (
 	"id" serial NOT NULL,
 	"name" varchar(255) NOT NULL UNIQUE,
@@ -30,6 +32,7 @@ CREATE TABLE public.characters (
 ) WITH (
   OIDS=FALSE
 );
+
 
 
 CREATE TABLE public.skills (
@@ -43,6 +46,7 @@ CREATE TABLE public.skills (
 );
 
 
+
 CREATE TABLE public.items (
 	"id" serial NOT NULL,
 	"name" varchar(255) NOT NULL UNIQUE,
@@ -51,6 +55,7 @@ CREATE TABLE public.items (
 ) WITH (
   OIDS=FALSE
 );
+
 
 
 CREATE TABLE public.matchs (
@@ -64,6 +69,7 @@ CREATE TABLE public.matchs (
 );
 
 
+
 CREATE TABLE public.user_characters (
 	"user_id" integer NOT NULL,
 	"character_id" integer NOT NULL,
@@ -71,6 +77,7 @@ CREATE TABLE public.user_characters (
 ) WITH (
   OIDS=FALSE
 );
+
 
 
 CREATE TABLE public.character_skills (
@@ -81,6 +88,7 @@ CREATE TABLE public.character_skills (
 ) WITH (
   OIDS=FALSE
 );
+
 
 
 CREATE TABLE public.match_users (
@@ -97,6 +105,7 @@ CREATE TABLE public.match_users (
 );
 
 
+
 CREATE TABLE public.effects (
 	"id" serial NOT NULL,
 	"name" varchar(255) NOT NULL UNIQUE,
@@ -105,6 +114,7 @@ CREATE TABLE public.effects (
 ) WITH (
   OIDS=FALSE
 );
+
 
 
 CREATE TABLE public.skill_effects (
@@ -116,6 +126,7 @@ CREATE TABLE public.skill_effects (
 );
 
 
+
 CREATE TABLE public.item_effects (
 	"item_id" integer NOT NULL,
 	"effect_id" integer NOT NULL,
@@ -125,19 +136,26 @@ CREATE TABLE public.item_effects (
 );
 
 
+
 CREATE TABLE public.match_teams (
+	"id" serial NOT NULL,
 	"match_id" integer NOT NULL,
-	"team" integer NOT NULL,
+	"team_number" integer NOT NULL,
 	"score" real NOT NULL,
 	"winner" BOOLEAN NOT NULL,
-	CONSTRAINT "match_teams_pk" PRIMARY KEY ("match_id","team")
+	CONSTRAINT "match_teams_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
 );
 
 
+
+
 ALTER TABLE "users_info" ADD CONSTRAINT "users_info_fk0" FOREIGN KEY ("user_id") REFERENCES "users"("id");
 ALTER TABLE "users_info" ADD CONSTRAINT "users_info_fk1" FOREIGN KEY ("last_character") REFERENCES "characters"("id");
+
+
+
 
 
 ALTER TABLE "user_characters" ADD CONSTRAINT "user_characters_fk0" FOREIGN KEY ("user_id") REFERENCES "users_info"("user_id");
@@ -148,7 +166,7 @@ ALTER TABLE "character_skills" ADD CONSTRAINT "character_skills_fk1" FOREIGN KEY
 
 ALTER TABLE "match_users" ADD CONSTRAINT "match_users_fk0" FOREIGN KEY ("user_id") REFERENCES "users_info"("user_id");
 ALTER TABLE "match_users" ADD CONSTRAINT "match_users_fk1" FOREIGN KEY ("match_id") REFERENCES "matchs"("id");
-ALTER TABLE "match_users" ADD CONSTRAINT "match_users_fk2" FOREIGN KEY ("team") REFERENCES "match_teams"("team");
+ALTER TABLE "match_users" ADD CONSTRAINT "match_users_fk2" FOREIGN KEY ("team") REFERENCES "match_teams"("id");
 ALTER TABLE "match_users" ADD CONSTRAINT "match_users_fk3" FOREIGN KEY ("character") REFERENCES "characters"("id");
 
 
@@ -159,5 +177,16 @@ ALTER TABLE "item_effects" ADD CONSTRAINT "item_effects_fk0" FOREIGN KEY ("item_
 ALTER TABLE "item_effects" ADD CONSTRAINT "item_effects_fk1" FOREIGN KEY ("effect_id") REFERENCES "effects"("id");
 
 ALTER TABLE "match_teams" ADD CONSTRAINT "match_teams_fk0" FOREIGN KEY ("match_id") REFERENCES "matchs"("id");
+
+
+
+
+
+
+
+
+
+
+
 
 
