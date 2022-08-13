@@ -10,5 +10,5 @@ INSERT INTO characters (name, price) VALUES
     ('Mano Brown', 1500.00);
 
 INSERT INTO character_skills (character_id, skill_id, level) VALUES
-    (0, 0, 1),
-    (1, 1, 1);
+    (1, 1, 1),
+    (2, 2, 1);
