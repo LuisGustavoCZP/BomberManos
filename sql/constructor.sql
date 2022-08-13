@@ -134,7 +134,6 @@ CREATE TABLE public.skill_effects (
 );
 
 
-
 CREATE TABLE public.item_effects (
 	"item_id" integer NOT NULL,
 	"effect_id" integer NOT NULL,	
@@ -179,9 +178,6 @@ ALTER TABLE "match_users" ADD CONSTRAINT "match_users_fk3" FOREIGN KEY ("charact
 
 ALTER TABLE "skill_effects" ADD CONSTRAINT "skill_effects_fk0" FOREIGN KEY ("skill_id") REFERENCES "skills"("id");
 ALTER TABLE "skill_effects" ADD CONSTRAINT "skill_effects_fk1" FOREIGN KEY ("effect_id") REFERENCES "effects"("id");
-
-ALTER TABLE "item_effects" ADD CONSTRAINT "item_effects_fk0" FOREIGN KEY ("item_id") REFERENCES "items"("id");
-ALTER TABLE "item_effects" ADD CONSTRAINT "item_effects_fk1" FOREIGN KEY ("effect_id") REFERENCES "effects"("id");
 
 ALTER TABLE "match_teams" ADD CONSTRAINT "match_teams_fk0" FOREIGN KEY ("match_id") REFERENCES "matchs"("id");
 
