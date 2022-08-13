@@ -9,4 +9,6 @@ INSERT INTO characters (name, price) VALUES
     ('Mané Galinha', 250.00),
     ('Mano Brown', 1500.00);
 
-/* INSERT INTO character_skills (name, price) VALUES */
+INSERT INTO character_skills (character_id, skill_id, level) VALUES
+    (0, 0, 1),
+    (1, 1, 1),

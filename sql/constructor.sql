@@ -38,8 +38,11 @@ CREATE TABLE public.characters (
 CREATE TABLE public.skills (
 	"id" serial NOT NULL,
 	"name" varchar(255) NOT NULL UNIQUE,
-	"cost" real NOT NULL,
-	"price" real NOT NULL,
+	"type" integer NOT NULL,
+	"description" varchar(255) NOT NULL,
+	"price" real,
+	"delay" real,
+	"cost" real,
 	CONSTRAINT "skills_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -51,6 +54,7 @@ CREATE TABLE public.items (
 	"id" serial NOT NULL,
 	"name" varchar(255) NOT NULL UNIQUE,
 	"price" real NOT NULL,
+	"stacks" integer,
 	CONSTRAINT "items_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -109,7 +113,9 @@ CREATE TABLE public.match_users (
 CREATE TABLE public.effects (
 	"id" serial NOT NULL,
 	"name" varchar(255) NOT NULL UNIQUE,
-	"data" varchar,
+	"data" varchar NOT NULL,
+	"description" varchar(255) NOT NULL,
+	"time" real,
 	CONSTRAINT "effects_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -118,9 +124,11 @@ CREATE TABLE public.effects (
 
 
 CREATE TABLE public.skill_effects (
+	"id" serial NOT NULL,
 	"skill_id" integer NOT NULL,
+	"level" integer NOT NULL,
 	"effect_id" integer NOT NULL,
-	"power" real NOT NULL
+	CONSTRAINT "skill_effects_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
 );
@@ -129,8 +137,7 @@ CREATE TABLE public.skill_effects (
 
 CREATE TABLE public.item_effects (
 	"item_id" integer NOT NULL,
-	"effect_id" integer NOT NULL,
-	"power" real NOT NULL
+	"effect_id" integer NOT NULL,	
 ) WITH (
   OIDS=FALSE
 );
