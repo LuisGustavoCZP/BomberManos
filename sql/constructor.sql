@@ -134,6 +134,7 @@ CREATE TABLE public.skill_effects (
 );
 
 
+
 CREATE TABLE public.item_effects (
 	"item_id" integer NOT NULL,
 	"effect_id" integer NOT NULL,	
