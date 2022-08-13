@@ -136,8 +136,10 @@ CREATE TABLE public.skill_effects (
 
 
 CREATE TABLE public.item_effects (
+	"id" serial NOT NULL,
 	"item_id" integer NOT NULL,
-	"effect_id" integer NOT NULL,	
+	"effect_id" integer NOT NULL
+	CONSTRAINT "item_effects_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
 );
