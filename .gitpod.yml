@@ -36,7 +36,7 @@ tasks:
     openMode: tab-after
     env:
       PORT: 3000
-      POSTGRES_CONNECTION_STRING: postgres://gitpod@localhost/bombermanos
+      POSTGRES: postgres://gitpod@localhost/bombermanos
 github: 
   prebuilds:
     master: true
