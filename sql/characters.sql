@@ -11,4 +11,4 @@ INSERT INTO characters (name, price) VALUES
 
 INSERT INTO character_skills (character_id, skill_id, level) VALUES
     (0, 0, 1),
-    (1, 1, 1),
+    (1, 1, 1);
