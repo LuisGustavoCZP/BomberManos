@@ -1,0 +1,10 @@
+[
+    {
+        "id": 0,
+        "name": "Bomba",
+        "type": "projectile",
+        "destructible": false,
+        "hp": 0,
+        "effects": [1]
+    }
+]

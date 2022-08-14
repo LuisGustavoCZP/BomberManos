@@ -1,0 +1,27 @@
+[
+    {
+        "id":0,
+        "name":"Laranjinha",
+        "price":0.00,
+        "skills":[
+            {"skill_id":0, "skill_level":1}
+        ]
+    },
+    {
+        "id":1,
+        "name":"Acerola",
+        "price":25.00,
+        "skills":[
+            {"skill_id":0, "skill_level":1}
+        ]
+    },
+    {
+        "id":2,
+        "name":"Zé Pequeno",
+        "price":150.00,
+        "skills":[
+            {"skill_id":0, "skill_level":2}, 
+            {"skill_id":1, "skill_level":1}
+        ]
+    }
+]

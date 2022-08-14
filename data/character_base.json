@@ -1,0 +1,38 @@
+[
+    {
+        "name":"hp",
+        "value": 100
+    },
+    {
+        "name":"mp",
+        "value": 10
+    },
+    {
+        "name":"spd",
+        "value": 1
+    },
+    {
+        "name":"xp_gain",
+        "value": 1
+    },
+    {
+        "name":"skill_cost",
+        "value": 1
+    },
+    {
+        "name":"skill_delay",
+        "value": 1
+    },
+    {
+        "name":"skill_damage",
+        "value": 1
+    },
+    {
+        "name":"skill_area",
+        "value": 1
+    },
+    {
+        "name":"skill_distance",
+        "value": 1
+    }
+]
