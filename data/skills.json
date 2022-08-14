@@ -19,6 +19,7 @@
         "type": "auto", 
         "description":"Explode uma bomba na área %distance.",
         "target": "area",
+        "event": "init",
         "levels":[
             {
                 "delay":0.00, 
@@ -34,6 +35,7 @@
         "type": "auto", 
         "description":"Aumento permanente em 25% da velocidade de movimento.",
         "target": "self",
+        "event": "init",
         "level":[
             {
                 "delay":0.00, 

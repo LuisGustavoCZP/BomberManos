@@ -19,8 +19,8 @@
     {
         "id": 2,
         "name": "Explosão da Bomba", 
-        "description": "Causa dano de %damage.",
-        "type": "permanent",
+        "description": "Causa dano de %stats.",
+        "type": "damage",
         "stats":
         [
             {"key":"hp", "value": 100}
@@ -29,7 +29,7 @@
     {
         "id":3,
         "name":"Movimento +25%", 
-        "description": "Aumenta em %stats.spd a velocidade de movimento.",
+        "description": "Aumenta %stats.",
         "type": "buff",
         "stats":
         [
