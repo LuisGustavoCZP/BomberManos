@@ -4,18 +4,16 @@
   "description": "Game utilizando react, tailwind, typescript, redis e postgres",
   "main": "index.js",
   "scripts": {
-    "install:server": "cd server && npm i",
     "install:client": "cd client && npm i",
-    "install": "npm run install:server && npm run install:client",
+    "install:login": "cd server && npm i",
+    "install:game": "cd server && npm i",
+    "install": "npm run install:client && npm run install:login && npm run install:game",
     "dev:client": "cd client && npm run dev",
-    "dev:server": "cd server && npm run dev",
-    "dev": "start \"Server\" npm run dev:server && start \"Client\" npm run dev:client",
-    "build:server": "cd server && npm run build",
-    "build:client": "cd client && npm run build",
-    "build": "npm run build:server && npm run build:client",
-    "start:server": "cd server && npm run start",
-    "start:client": "cd client && npm run start",
-    "start": "npm run build:client && npm run build:server && npm run start:server"
+    "dev:login": "cd server && npm run dev",
+    "dev:game": "cd gameserver && npm run dev",
+    "dev": "start \"Client\" npm run dev:client && start \"LoginServer\" npm run dev:login && start \"GameServer\" npm run dev:game",
+    "start:game": "cd gameserver && npm run build && npm run start",
+    "start:login": "cd client && npm run build && cd ../server && npm run build && npm run start"
   },
   "repository": {
     "type": "git",

@@ -29,13 +29,23 @@ tasks:
      psql -h localhost -U gitpod -f sql/start.sql
     openMode: tab-after
     
-  - name: Start Node Stack
+  - name: Start Login Stack
     init: | 
-     npm i
-    command: npm run start
+     npm run install:client
+     npm run install:login
+    command: npm run start:login
     openMode: tab-after
     env:
       PORT: 3000
+      POSTGRES: postgres://gitpod@localhost/bombermanos
+
+  - name: Start Game Stack
+    init: | 
+     npm run install:game
+    command: npm run start:game
+    openMode: tab-after
+    env:
+      PORT: 4000
       POSTGRES: postgres://gitpod@localhost/bombermanos
 github: 
   prebuilds:
