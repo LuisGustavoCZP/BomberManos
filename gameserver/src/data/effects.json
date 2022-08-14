@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Temporizador da Bomba", 
+        "description": "Explode em %timeout causando %skills.",
+        "type": "cast",
+        "keys":["skills", "timeout"]
+    },
+    {
+        "id": 2,
+        "name": "Dano da Bomba", 
+        "description": "Causa dano de %hp.",
+        "type": "damage",
+        "keys":["hp"]
+    },
+    {
+        "id":3,
+        "name":"Movimento +25%", 
+        "description": "Aumenta %spd.",
+        "type": "buff",
+        "keys":["spd"]
+    }
+]

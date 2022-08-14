@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "name": "trap",
+        "type": "spawn",
+        "target": "area"
+    },
+    {
+        "id": 0,
+        "name": "explosion",
+        "type": "projectile", 
+        "target": "area"
+    }
+]

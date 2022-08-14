@@ -1,0 +1,56 @@
+[
+    {
+        "id": 0,
+        "name": "Bomba", 
+        "type": "spawn",
+        "target": "area",
+        "trigger": "action",
+        "levels":[
+            {
+                "delay":0.60, 
+                "consume":[],
+                "distance": 1,
+                "object_id": 1, 
+                "quanty": 1,
+                "keys": [{"hp" : 100}]
+            }
+        ],
+        "description":"Solta uma bomba na posição atual."
+    },
+    {
+        "id": 1,
+        "name": "Explodir",
+        "type": "projectile", 
+        "target": "area",
+        "trigger": "auto",
+        "start_events": ["init"],
+        "cancel_events": [],
+        "end_events": ["dead"],
+        "levels":[
+            {
+                "timeout": 1.00,
+                "consume": [{"hp" : "hp"}],
+                "distance": 5,
+                "object_id": 1,
+                "damage": [{"hp" : "hp"}]
+            }
+        ], 
+        "description":"Explode na área %distance."
+    },
+    {
+        "id": 2,
+        "name": "Ligeirinho",
+        "type": "buff",
+        "trigger": "auto",
+        "target": "self",
+        "events": ["init"],
+        "level":[
+            {
+                "delay":0.00, 
+                "consume":[],
+                "effects":[3]
+            }
+        ], 
+        "description":"Aumento permanente em 25% da velocidade de movimento."
+    }
+]

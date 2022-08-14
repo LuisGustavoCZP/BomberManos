@@ -17,6 +17,10 @@
       "extensions": "ts,tsx,css,html"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisGustavoCZP/BomberManos/tree/main/client"
+  },
   "dependencies": {
     "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^1.0.6",

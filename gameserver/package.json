@@ -1,26 +1,24 @@
 {
-  "name": "bombermanos-server",
+  "name": "bombermanos-gameserver",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
   "scripts": {
     "build": "npx tsc",
     "start": "node build/index.js",
-    "copy-extra": "copyfiles ./src/security/* ./build",
-    "dev": "concurrently \"npx tsc --watch\" \"npm run copy-extra\" \"nodemon -q build/index.js\""
+    "copy-security": "copyfiles ./src/security/* ./build",
+    "copy-data": "copyfiles ./src/data/* ./build",
+    "dev": "concurrently \"npx tsc --watch\" \"npm run copy-security\" \"npm run copy-data\" \"nodemon -q build/index.js\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LuisGustavoCZP/BomberManos/tree/main/server"
+    "url": "git+https://github.com/LuisGustavoCZP/BomberManos/tree/main/gameserver"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/bcrypt": "^5.0.0",
-    "@types/cookie-parser": "^1.4.3",
     "@types/express": "^4.17.13",
     "@types/ioredis": "^4.28.10",
-    "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^18.0.3",
     "@types/pg": "^8.6.5",
     "@types/socket.io": "^3.0.2",
@@ -34,8 +32,6 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
@@ -43,7 +39,6 @@
     "http": "^0.0.1-security",
     "https": "^1.0.0",
     "ioredis": "^5.2.2",
-    "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.3",
     "socket.io": "^4.5.1",
     "uuid": "^8.3.2"
