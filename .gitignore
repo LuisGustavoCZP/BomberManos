@@ -127,4 +127,5 @@ dist
 .pnp.*
 
 server/build/
+gameserver/build/
 client/build/

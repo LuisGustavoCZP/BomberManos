@@ -6,7 +6,7 @@
   "scripts": {
     "install:client": "cd client && npm i",
     "install:login": "cd server && npm i",
-    "install:game": "cd server && npm i",
+    "install:game": "cd gameserver && npm i",
     "install": "npm run install:client && npm run install:login && npm run install:game",
     "dev:client": "cd client && npm run dev",
     "dev:login": "cd server && npm run dev",
