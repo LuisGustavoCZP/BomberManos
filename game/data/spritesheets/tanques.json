@@ -1,0 +1,8 @@
+{
+    "name":"tanques",
+    "image":"/assets/images/sprites/towerDefense_tilesheet.png",
+    "tileheight":128, 
+    "tilewidth":128,
+    "spacing":0,
+    "margin":0
+}

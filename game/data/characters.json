@@ -1,0 +1,19 @@
+[
+    {
+        "name":"Tobias",
+        "sprite": 
+        {
+            "spriteSheet":"data/spritesheets/personagens.json",
+            "spriteIndex":0,
+            "animationSet":"/data/animationsets/movimento-simples.json"
+        },
+        "size":32,
+        "physics":{
+            "isTrigger":false
+        },
+        "dynamic":{
+            "speedRotation": 2,
+            "speed": 1
+        }
+    }
+]
